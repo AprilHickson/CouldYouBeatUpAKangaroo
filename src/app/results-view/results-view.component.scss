@@ -1,0 +1,50 @@
+.results-view {
+  .we-think-you {
+    animation: waggle 1s 0.4s forwards ease-out;
+  }
+  .result {
+    animation: fade 2s 2s forwards;
+    opacity: 0;
+  }
+  .positive {
+    color: #97c378;
+  }
+  .negative {
+    color: #d16666;
+  }
+  button {
+    animation: fade 2s 4s forwards;
+    opacity: 0;
+  }
+}
+
+button {
+  width: 300px;
+}
+
+@keyframes waggle {
+  0% {
+    transform: none;
+  }
+  50% {
+    transform: rotateZ(-20deg) scale(1.2);
+  }
+  60% {
+    transform: rotateZ(25deg) scale(1.2);
+  }
+  67.5% {
+    transform: rotateZ(-15deg) scale(1.2);
+  }
+  75% {
+    transform: rotateZ(15deg) scale(1.2);
+  }
+  82.5% {
+    transform: rotateZ(-12deg) scale(1.2);
+  }
+  85% {
+    transform: rotateZ(0) scale(1.2);
+  }
+  100% {
+    transform: rotateZ(0) scale(1);
+  }
+}

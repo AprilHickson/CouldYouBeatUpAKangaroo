@@ -1,0 +1,21 @@
+<div [formGroup]="quizForm">
+  <h1 class="header">Choose the option that best describes you.</h1>
+  <div class="options">
+    <div class="option"
+         (click)="optionClicked(lifestyleOption)"
+         [ngClass]="{ selected: isSelected(lifestyleOption) }"
+         *ngFor="let lifestyleOption of LifestyleOptionList">
+      {{lifestyleOption}}
+      <fa-icon [icon]="faCheckCircle"></fa-icon>
+    </div>
+  </div>
+  <div class='controls'>
+    <button (click)="moveToNextStep()"
+            [disabled]="!(canClickNext$ | async)"
+            [ngClass]="{ sheen: canClickNext$ | async }">
+      <span></span>
+      <span>Next</span>
+      <fa-icon [icon]="faArrowRight"></fa-icon>
+    </button>
+  </div>
+</div>

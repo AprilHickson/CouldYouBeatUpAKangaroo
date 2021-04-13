@@ -1,0 +1,30 @@
+<div class="background">
+  <div class="header main-header"
+       *ngIf="currentStep < 5">Could You Beat Up a Kangaroo?</div>
+  <app-enter-your-name *ngIf="currentStep === 0"></app-enter-your-name>
+  <app-enter-your-age *ngIf="currentStep === 1"></app-enter-your-age>
+  <app-enter-your-height *ngIf="currentStep === 2"></app-enter-your-height>
+  <app-enter-your-weight *ngIf="currentStep === 3"></app-enter-your-weight>
+  <app-enter-your-foot-size *ngIf="currentStep === 4">
+  </app-enter-your-foot-size>
+  <app-enter-your-lifestyle *ngIf="currentStep === 5">
+  </app-enter-your-lifestyle>
+  <app-select-the-words-that-describe-you *ngIf="currentStep === 6">
+  </app-select-the-words-that-describe-you>
+  <app-enter-your-self-rating *ngIf="currentStep === 7">
+  </app-enter-your-self-rating>
+  <app-results-view *ngIf="currentStep === 8"></app-results-view>
+  <div class="disclaimer"
+       *ngIf="currentStep === 0 || currentStep === 8">Disclaimer: Use for
+    entertainment
+    only, you shouldn't
+    beat up kangaroos.</div>
+  <app-show-score *ngIf="currentStep === 8"
+                  class="show-score"></app-show-score>
+  <div class="background-logo"></div>
+
+  <ng-adsense *ngIf="currentStep >= 7"
+              [display]="'inline-block'"
+              width="40vw"
+              [height]="108"></ng-adsense>
+</div>

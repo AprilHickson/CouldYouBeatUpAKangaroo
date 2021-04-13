@@ -1,0 +1,58 @@
+.background {
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  > * {
+    width: 50%;
+    z-index: 10;
+    @media only screen and (max-width: 1050px) {
+      width: 90%;
+    }
+    animation: fade 1s 0s forwards;
+    opacity: 0;
+  }
+  .disclaimer {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: inherit;
+    animation: fade 1s 0s forwards;
+    padding: 10px;
+  }
+  .show-score {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 20%;
+    opacity: 0;
+    animation: fade 1s 5s forwards;
+
+    @media only screen and (max-width: 1050px) {
+      width: 90%;
+      display: none;
+    }
+  }
+  .main-header {
+    margin-bottom: 50px;
+    animation: fade 1s 0s forwards;
+  }
+  .background-logo {
+    position: absolute;
+    height: 90vh;
+    left: 10px;
+    background-image: url("src/assets/logo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 2;
+  }
+  ng-adsense {
+    position: absolute;
+    bottom: 10px;
+    @media only screen and (max-width: 1050px) {
+      bottom: 60px;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<div [formGroup]="quizForm">
+  <input class='input-box'
+         formControlName="name"
+         (keyup.enter)="moveToNextStep()"
+         [autofocus]="true"
+         placeholder="Enter Your Name">
+  <div class='controls'>
+    <button (click)="moveToNextStep()"
+            [ngClass]="{ sheen: canClickNext$ | async }">
+      <span></span>
+      <span>{{buttonText$ | async}}</span>
+      <fa-icon [icon]="faArrowRight"></fa-icon>
+    </button>
+  </div>
+</div>

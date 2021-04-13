@@ -1,0 +1,33 @@
+<div [formGroup]="quizForm">
+  <div class="dropdown-input">
+
+    <input class='input'
+           formControlName="footSize"
+           type="number"
+           (keyup.enter)="moveToNextStep()"
+           [autofocus]="true"
+           [OnlyNumber]="true"
+           placeholder="Shoe size">
+
+    <div class="dropdown-wrapper">
+      <select class='dropdown'
+              formControlName="footSizeUnit">
+        <option *ngFor="let option of FootSizeUnitsList"
+                class="option"
+                [ngValue]="option">
+          {{option}}</option>
+
+      </select>
+      <fa-icon [icon]="faArrowDown"></fa-icon>
+    </div>
+  </div>
+  <div class='controls'>
+    <button (click)="moveToNextStep()"
+            [disabled]="!(canClickNext$ | async)"
+            [ngClass]="{ sheen: canClickNext$ | async }">
+      <span></span>
+      <span>Next</span>
+      <fa-icon [icon]="faArrowRight"></fa-icon>
+    </button>
+  </div>
+</div>

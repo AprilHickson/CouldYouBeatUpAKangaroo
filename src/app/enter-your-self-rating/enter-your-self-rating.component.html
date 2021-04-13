@@ -1,0 +1,18 @@
+<div [formGroup]="quizForm">
+  <input class='input-box'
+         formControlName="selfRating"
+         type="number"
+         (keyup.enter)="moveToNextStep()"
+         [OnlyNumber]="true"
+         [autofocus]="true"
+         placeholder="Rate Yourself.">
+  <div class='controls'>
+    <button (click)="moveToNextStep()"
+            [disabled]="!(canClickNext$ | async)"
+            [ngClass]="{ sheen: canClickNext$ | async }">
+      <span></span>
+      <span>Next</span>
+      <fa-icon [icon]="faArrowRight"></fa-icon>
+    </button>
+  </div>
+</div>

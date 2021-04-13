@@ -1,0 +1,18 @@
+<div [formGroup]="quizForm">
+  <input class='input-box height'
+         formControlName="height"
+         type="number"
+         (keyup.enter)="moveToNextStep()"
+         [autofocus]="true"
+         [OnlyNumber]="true"
+         placeholder="Height in cm">
+  <div class='controls'>
+    <button (click)="moveToNextStep()"
+            [disabled]="!(canClickNext$ | async)"
+            [ngClass]="{ sheen: canClickNext$ | async }">
+      <span></span>
+      <span>Next</span>
+      <fa-icon [icon]="faArrowRight"></fa-icon>
+    </button>
+  </div>
+</div>

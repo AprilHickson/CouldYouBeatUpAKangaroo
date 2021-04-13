@@ -1,0 +1,21 @@
+<div [formGroup]="quizForm">
+  <h1 class="header">Choose the words that best describe you.</h1>
+  <div class="options">
+    <div class="option"
+         (click)="optionClicked(wordOption)"
+         [ngClass]="{ selected: isSelected(wordOption) }"
+         *ngFor="let wordOption of WordToDescribeYouOptionList">
+      {{wordOption}}
+      <fa-icon [icon]="faCheckCircle"></fa-icon>
+    </div>
+  </div>
+  <div class='controls'>
+    <button (click)="moveToNextStep()"
+            [disabled]="!(canClickNext$ | async)"
+            [ngClass]="{ sheen: canClickNext$ | async }">
+      <span></span>
+      <span>Next</span>
+      <fa-icon [icon]="faArrowRight"></fa-icon>
+    </button>
+  </div>
+</div>

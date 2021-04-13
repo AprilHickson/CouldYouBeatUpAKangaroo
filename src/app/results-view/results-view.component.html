@@ -1,0 +1,18 @@
+<div class="results-view">
+  <div class="header we-think-you">We think you:</div>
+  <div *ngIf="could"
+       class="header result positive">Could Beat Up a Kangaroo
+    <fa-icon [icon]="faCheckCircle"></fa-icon>
+  </div>
+  <div *ngIf="!could"
+       class="header result negative">Could Not Beat Up a Kangaroo
+    <fa-icon [icon]="faTimesCircle"></fa-icon>
+  </div>
+  <div class='controls'>
+    <button (click)="reset()">
+      <span></span>
+      <span>Try Again?</span>
+      <fa-icon [icon]="faArrowRight"></fa-icon>
+    </button>
+  </div>
+</div>
